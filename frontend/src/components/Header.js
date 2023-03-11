@@ -1,14 +1,21 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
+
+const navbarStyle = {
+  backgroundColor: "black",
+};
+
+const logo = "android-chrome-512x512.png";
 
 const Header = ({ title }) => {
-  const logo = "android-chrome-512x512.png";
   return (
-    <Navbar bg="dark" variant="dark">
-      <a class="navbar-brand" href="#">
+    <Navbar style={navbarStyle} variant="dark">
+      <a>
         <img src={logo} width="40" height="40"></img>
       </a>
-      <Navbar.Brand href="/">{title}</Navbar.Brand>
+      <Navbar.Brand className="mx-3 text-uppercase" href="/">
+        {title}
+      </Navbar.Brand>
     </Navbar>
   );
 };
