@@ -9,8 +9,11 @@ const UNSPLASH_PATH = "/photos/random/";
 
 const App = () => {
   const [word, setWord] = useState("");
+  const [images, setImages] = useState([]);
 
-  const handleSearchSubmit = (e) => {
+  console.log(images);
+
+  function handleSearchSubmit(e) {
     e.preventDefault();
     console.log(word);
 
@@ -19,14 +22,14 @@ const App = () => {
     )
       .then((result) => result.json())
       .then((data) => {
-        console.log(data);
+        setImages([data, ...images]);
       })
       .catch((error) => {
         console.log(error);
       });
 
     setWord("");
-  };
+  }
 
   return (
     <div className="App">
