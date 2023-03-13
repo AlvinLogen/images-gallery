@@ -2,16 +2,15 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import ImageCard from "./components/ImageCard";
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 const UNSPLASH_API = "https://api.unsplash.com";
-const UNSPLASH_PATH = "/photos/random/";
+const UNSPLASH_PATH = "/photos/random";
 
 const App = () => {
   const [word, setWord] = useState("");
   const [images, setImages] = useState([]);
-
-  console.log(images);
 
   function handleSearchSubmit(e) {
     e.preventDefault();
@@ -35,6 +34,7 @@ const App = () => {
     <div className="App">
       <Header title="Images Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      <ImageCard />
     </div>
   );
 };
