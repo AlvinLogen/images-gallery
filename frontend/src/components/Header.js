@@ -22,6 +22,7 @@ const Header = ({ title }) => {
               maxWidth: "15rem",
               maxHeight: "2.5rem",
             }}
+            alt={title}
           />
         </a>
       </Container>
